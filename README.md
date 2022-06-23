@@ -49,7 +49,7 @@ ok      ej      13.568s
 ```
 
 ## 总结
-`easyjson`总体性能比较好，但使用需预编译生成对应的json文件。想方便使用的话`Unmarshal`场景推荐使用`sonic`, `marshal`场景推荐使用`jsoniter`。
+`easyjson`总体性能比较好，但使用需预编译生成对应的json文件。想方便使用的话`Unmarshal`场景推荐使用`sonic`, `Marshal`场景推荐使用`jsoniter`。
 
 ## 链接
 https://www.iarno.cn/article/golang-json/
