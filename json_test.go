@@ -71,3 +71,12 @@ func BenchmarkUnmarshalSonic(b *testing.B) {
 		sonic.Unmarshal(jsonByte, &ss)
 	}
 }
+
+func BenchmarkUnmarshalJsoniter(b *testing.B) {
+	jsonByte, _ := ioutil.ReadFile("/home/liuli1/devspace/go_test/json/data.json")
+	ss := user.Users{}
+	var jsonIterator = jsoniter.ConfigCompatibleWithStandardLibrary
+	for n := 0; n < b.N; n++ {
+		jsonIterator.Unmarshal(jsonByte, &ss)
+	}
+}

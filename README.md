@@ -1,40 +1,55 @@
 ## 执行命令
 
 ```bash
-[iarno@xxxx json]$ go test -bench=. -benchmem -count=3
+[iarno@xxx json]$ go test -bench=. -benchmem
 goos: linux
 goarch: amd64
 pkg: ej
 cpu: Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
-BenchmarkMarshalStd-16                        50          28561013 ns/op         1505537 B/op       7745 allocs/op
-BenchmarkMarshalStd-16                        49          24422802 ns/op         1539423 B/op       7747 allocs/op
-BenchmarkMarshalStd-16                        44          24585770 ns/op         1510562 B/op       7746 allocs/op
-BenchmarkMarshalEasyjson-16                   78          15516738 ns/op          840841 B/op       7741 allocs/op
-BenchmarkMarshalEasyjson-16                   67          17627544 ns/op          840016 B/op       7742 allocs/op
-BenchmarkMarshalEasyjson-16                   69          15311299 ns/op          840791 B/op       7741 allocs/op
-BenchmarkMarshalSonic-16                      67          18134417 ns/op         1965089 B/op       7744 allocs/op
-BenchmarkMarshalSonic-16                      72          17689474 ns/op         1865333 B/op       7742 allocs/op
-BenchmarkMarshalSonic-16                      70          17238276 ns/op         1791502 B/op       7743 allocs/op
-BenchmarkMarshalJsoniter-16                   63          16762821 ns/op         1451630 B/op       7746 allocs/op
-BenchmarkMarshalJsoniter-16                   70          17972752 ns/op         1403577 B/op       7744 allocs/op
-BenchmarkMarshalJsoniter-16                   66          16069798 ns/op         1416747 B/op       7744 allocs/op
-
-
-BenchmarkUnmarshalStd-16                      93          12613253 ns/op          263340 B/op       5279 allocs/op
-BenchmarkUnmarshalStd-16                      97          12310017 ns/op          262881 B/op       5279 allocs/op
-BenchmarkUnmarshalStd-16                      82          13161649 ns/op          264768 B/op       5279 allocs/op
-BenchmarkUnmarshalEasyjson-16                394           3476542 ns/op          254637 B/op       5273 allocs/op
-BenchmarkUnmarshalEasyjson-16                348           3558817 ns/op          254982 B/op       5273 allocs/op
-BenchmarkUnmarshalEasyjson-16                322           3393389 ns/op          255211 B/op       5273 allocs/op
-BenchmarkUnmarshalSonic-16                   250           5647755 ns/op          849839 B/op       5275 allocs/op
-BenchmarkUnmarshalSonic-16                   232           4930591 ns/op          846819 B/op       5276 allocs/op
-BenchmarkUnmarshalSonic-16                   238           5219573 ns/op          819086 B/op       5276 allocs/op
+BenchmarkMarshalStd-16                        39          28729452 ns/op         1584273 B/op       7748 allocs/op
+BenchmarkMarshalEasyjson-16                   72          15596759 ns/op          841571 B/op       7741 allocs/op
+BenchmarkMarshalSonic-16                      66          17749983 ns/op         1868336 B/op       7743 allocs/op
+BenchmarkMarshalJsoniter-16                   64          16630098 ns/op         1455315 B/op       7745 allocs/op
+BenchmarkUnmarshalStd-16                      94          12446730 ns/op          263219 B/op       5279 allocs/op
+BenchmarkUnmarshalEasyjson-16                312           3494945 ns/op          255307 B/op       5273 allocs/op
+BenchmarkUnmarshalSonic-16                   235           5323271 ns/op          852935 B/op       5275 allocs/op
+BenchmarkUnmarshalJsoniter-16                156           7237369 ns/op         1185091 B/op      20554 allocs/op
 PASS
-ok      ej      29.946s
+ok      ej      11.866s
+[iarno@xxx json]$ go test -bench=. -benchmem
+goos: linux
+goarch: amd64
+pkg: ej
+cpu: Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+BenchmarkMarshalStd-16                        43          27610997 ns/op         1489298 B/op       7746 allocs/op
+BenchmarkMarshalEasyjson-16                   72          14568265 ns/op          840124 B/op       7741 allocs/op
+BenchmarkMarshalSonic-16                      74          17366276 ns/op         2028366 B/op       7744 allocs/op
+BenchmarkMarshalJsoniter-16                   74          15122561 ns/op         1417441 B/op       7745 allocs/op
+BenchmarkUnmarshalStd-16                      99          12098387 ns/op          262674 B/op       5279 allocs/op
+BenchmarkUnmarshalEasyjson-16                368           3138297 ns/op          254820 B/op       5273 allocs/op
+BenchmarkUnmarshalSonic-16                   249           4625963 ns/op          850076 B/op       5276 allocs/op
+BenchmarkUnmarshalJsoniter-16                172           7091668 ns/op         1184619 B/op      20555 allocs/op
+PASS
+ok      ej      11.929s
+[iarno@xxx json]$ go test -bench=. -benchmem
+goos: linux
+goarch: amd64
+pkg: ej
+cpu: Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz
+BenchmarkMarshalStd-16                        51          23397591 ns/op         1462250 B/op       7744 allocs/op
+BenchmarkMarshalEasyjson-16                   74          14626428 ns/op          842940 B/op       7741 allocs/op
+BenchmarkMarshalSonic-16                      68          16152159 ns/op         1631867 B/op       7741 allocs/op
+BenchmarkMarshalJsoniter-16                   78          15430692 ns/op         1468790 B/op       7746 allocs/op
+BenchmarkUnmarshalStd-16                     100          12138661 ns/op          262563 B/op       5279 allocs/op
+BenchmarkUnmarshalEasyjson-16                405           3254779 ns/op          254568 B/op       5273 allocs/op
+BenchmarkUnmarshalSonic-16                   255           4638503 ns/op          836535 B/op       5276 allocs/op
+BenchmarkUnmarshalJsoniter-16                164           7007530 ns/op         1184839 B/op      20554 allocs/op
+PASS
+ok      ej      13.568s
 ```
 
 ## 总结
-`easyjson`总体性能比较好，但使用需预编译生成对应的json文件。`jsoniter`umarshal使用不方便，如果要方便使用推荐`sonic`。
+`easyjson`总体性能比较好，但使用需预编译生成对应的json文件。想方便使用的话`Unmarshal`场景推荐使用`sonic`, `marshal`场景推荐使用`jsoniter`。
 
 ## 链接
 https://www.iarno.cn/article/golang-json/
